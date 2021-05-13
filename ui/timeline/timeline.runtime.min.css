@@ -1,0 +1,1 @@
+.timeline__item{pointer-events:none}.timeline__item:after{pointer-events:all}.timeline__item:before{content:'';height:4px;position:absolute;width:100%;z-index:1;left:50%}.timeline__item--top:before{top:99%}.timeline__item--bottom:before{top:-1%}

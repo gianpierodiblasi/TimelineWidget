@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Entities build="b243" majorVersion="9" minorVersion="0" modelPersistenceProviderPackage="H2PersistenceProviderPackage" revision="3" schemaVersion="1102" universal="">
+  <DataShapes>
+    <DataShape name="ds_Timeline">
+      <FieldDefinitions>
+        <FieldDefinition aspect.isPrimaryKey="true" baseType="STRING" description="" name="id" ordinal="1"/>
+        <FieldDefinition aspect.isPrimaryKey="false" baseType="HTML" description="" name="content" ordinal="2"/>
+        <FieldDefinition aspect.isPrimaryKey="false" baseType="BOOLEAN" description="" name="selectable" ordinal="3"/>
+        <FieldDefinition aspect.isPrimaryKey="false" baseType="STRING" description="" name="backgroundColor" ordinal="4"/>
+        <FieldDefinition aspect.isPrimaryKey="false" baseType="STRING" description="" name="borderColor" ordinal="5"/>
+        <FieldDefinition aspect.isPrimaryKey="false" baseType="STRING" description="" name="timelineColorFromlHere" ordinal="6"/>
+      </FieldDefinitions>      
+    </DataShape>
+  </DataShapes>
+</Entities>
