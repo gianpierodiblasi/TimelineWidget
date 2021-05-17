@@ -53,7 +53,8 @@ TW.IDE.Widgets.timeline = function () {
           'selectOptions': [
             {value: 'top-bottom', text: 'Top & Bottom'},
             {value: 'bottom-top', text: 'Bottom & Top'},
-            {value: 'top', text: 'Top'}
+            {value: 'top', text: 'Top'},
+            {value: 'bottom', text: 'Bottom'}
           ]
         },
         'moveItems': {

@@ -1,10 +1,22 @@
-.timeline-all-top, .timeline-all-top .timeline__wrap, .timeline-all-top .timeline__wrap .timeline__items {
+.timeline-all-top, .timeline-all-top .timeline__wrap, .timeline-all-top .timeline__wrap .timeline__items,
+.timeline-all-bottom, .timeline-all-bottom .timeline__wrap, .timeline-all-bottom .timeline__wrap .timeline__items{
   height: 100% !important;
 }
 
-.timeline-all-top .timeline__item {
+.timeline-all-top .timeline__item, .timeline-all-bottom .timeline__item {
   padding-left: 1px !important;
   padding-right: 1px !important;  
+}
+
+.timeline-all-top .timeline__item {
+  transform: translateY(0px) !important;
+}
+
+.timeline-all-bottom .timeline__item {
+  transform: translateY(20px) !important;
+}
+.timeline-all-bottom .timeline-nav-button, .timeline-all-bottom .timeline-divider {
+  top:  20px !important;
 }
 
 .timeline__item {

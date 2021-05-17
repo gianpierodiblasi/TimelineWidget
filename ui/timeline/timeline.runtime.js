@@ -96,7 +96,7 @@ TW.Runtime.Widgets.timeline = function () {
       }
 
       var verticalAlignment = thisWidget.getProperty('verticalAlignment');
-      var horizontalStartPosition = verticalAlignment === "top" ? verticalAlignment : verticalAlignment.substring(0, verticalAlignment.indexOf("-"));
+      var horizontalStartPosition = verticalAlignment === "top" || verticalAlignment === "bottom" ? verticalAlignment : verticalAlignment.substring(0, verticalAlignment.indexOf("-"));
 
       $('.timeline-' + uid).timeline({
         'mode': 'horizontal',
@@ -108,9 +108,17 @@ TW.Runtime.Widgets.timeline = function () {
       });
 
       if (verticalAlignment === "top") {
-        var mutationObserver = new MutationObserver(thisWidget.observe);
+        var mutationObserver = new MutationObserver(thisWidget.observeTop);
         $('.timeline-' + uid).addClass("timeline-all-top");
-        $(".timeline-" + uid + " .timeline__item--bottom").css("transform", "translateY(0px)").removeClass("timeline__item--bottom").addClass("timeline__item--top").each(function (index) {
+
+        $(".timeline-" + uid + " .timeline__item--bottom").removeClass("timeline__item--bottom").addClass("timeline__item--top").each(function (index) {
+          mutationObserver.observe(this, {attributeFilter: ["class"]});
+        });
+      } else if (verticalAlignment === "bottom") {
+        var mutationObserver = new MutationObserver(thisWidget.observeBottom);
+        $('.timeline-' + uid).addClass("timeline-all-bottom");
+        
+        $(".timeline-" + uid + " .timeline__item").removeClass("timeline__item--top").addClass("timeline__item--bottom").each(function (index) {
           mutationObserver.observe(this, {attributeFilter: ["class"]});
         });
       }
@@ -122,10 +130,18 @@ TW.Runtime.Widgets.timeline = function () {
     }
   };
 
-  this.observe = function (mutationsList) {
+  this.observeTop = function (mutationsList) {
     for (var mutation of mutationsList) {
       if (mutation.attributeName === "class") {
-        $(mutation.target).css("transform", "translateY(0px)").removeClass("timeline__item--bottom");
+        $(mutation.target).removeClass("timeline__item--bottom");
+      }
+    }
+  };
+
+  this.observeBottom = function (mutationsList) {
+    for (var mutation of mutationsList) {
+      if (mutation.attributeName === "class") {
+        $(mutation.target).removeClass("timeline__item--top");
       }
     }
   };
