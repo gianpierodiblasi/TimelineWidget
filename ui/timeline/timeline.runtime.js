@@ -95,19 +95,38 @@ TW.Runtime.Widgets.timeline = function () {
         $("<style>" + style + "</style>").prependTo(widgetDIV);
       }
 
+      var verticalAlignment = thisWidget.getProperty('verticalAlignment');
+      var horizontalStartPosition = verticalAlignment === "top" ? verticalAlignment : verticalAlignment.substring(0, verticalAlignment.indexOf("-"));
+
       $('.timeline-' + uid).timeline({
         'mode': 'horizontal',
         'forceVerticalMode': 10,
-        'horizontalStartPosition': thisWidget.getProperty('horizontalStartPosition'),
+        'horizontalStartPosition': horizontalStartPosition,
         'moveItems': thisWidget.getProperty('moveItems'),
         'startIndex': thisWidget.getProperty('startIndex'),
         'visibleItems': thisWidget.getProperty('visibleItems')
       });
 
+      if (verticalAlignment === "top") {
+        var mutationObserver = new MutationObserver(thisWidget.observe);
+        $('.timeline-' + uid).addClass("timeline-all-top");
+        $(".timeline-" + uid + " .timeline__item--bottom").css("transform", "translateY(0px)").removeClass("timeline__item--bottom").addClass("timeline__item--top").each(function (index) {
+          mutationObserver.observe(this, {attributeFilter: ["class"]});
+        });
+      }
+
       if (debugMode) {
         console.log("Timeline - Inited");
       }
       thisWidget.jqElement.triggerHandler("Inited");
+    }
+  };
+
+  this.observe = function (mutationsList) {
+    for (var mutation of mutationsList) {
+      if (mutation.attributeName === "class") {
+        $(mutation.target).css("transform", "translateY(0px)").removeClass("timeline__item--bottom");
+      }
     }
   };
 };

@@ -3,7 +3,7 @@
   <ExtensionPackages>
     <ExtensionPackage 
       name="TimelineWidget"
-      packageVersion="0.7.0"
+      packageVersion="0.8.6"
       vendor="Accenture Italy - Industry X"
       description="Extension to visualize a timeline"
       minimumThingWorxVersion="8.3.0"> 

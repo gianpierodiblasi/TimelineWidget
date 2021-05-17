@@ -44,15 +44,16 @@ TW.IDE.Widgets.timeline = function () {
           'defaultValue': null,
           'description': 'The (eventually) selected item'
         },
-        'horizontalStartPosition': {
+        'verticalAlignment': {
           'isVisible': true,
           'baseType': 'STRING',
           'isEditable': true,
-          'defaultValue': 'top',
-          'description': 'Define the vertical alignment of the first item',
+          'defaultValue': 'top-bottom',
+          'description': 'Define the vertical alignment of the items',
           'selectOptions': [
-            {value: 'top', text: 'Top'},
-            {value: 'bottom', text: 'Bottom'}
+            {value: 'top-bottom', text: 'Top & Bottom'},
+            {value: 'bottom-top', text: 'Bottom & Top'},
+            {value: 'top', text: 'Top'}
           ]
         },
         'moveItems': {
