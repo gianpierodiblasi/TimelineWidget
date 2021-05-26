@@ -52,9 +52,14 @@ TW.Runtime.Widgets.timeline = function () {
     var itemsDIV = $('<div class="timeline__items"></div>').appendTo(wrapDIV);
 
     var timeline = thisWidget.getProperty('timeline');
+    var compact = thisWidget.getProperty('compact');
     var debugMode = thisWidget.getProperty('debugMode');
 
     if (timeline && timeline.rows) {
+      if (compact) {
+        widgetDIV.addClass("timeline-compact");
+      }
+      
       var contentKey = timeline.isCompressed ? timeline.dataShape.fieldDefinitions.content.alias : "content";
       var selectableKey = timeline.isCompressed ? timeline.dataShape.fieldDefinitions.selectable.alias : "selectable";
       var backgroundColorKey = timeline.isCompressed ? timeline.dataShape.fieldDefinitions.backgroundColor.alias : "backgroundColor";
@@ -117,7 +122,7 @@ TW.Runtime.Widgets.timeline = function () {
       } else if (verticalAlignment === "bottom") {
         var mutationObserver = new MutationObserver(thisWidget.observeBottom);
         $('.timeline-' + uid).addClass("timeline-all-bottom");
-        
+
         $(".timeline-" + uid + " .timeline__item").removeClass("timeline__item--top").addClass("timeline__item--bottom").each(function (index) {
           mutationObserver.observe(this, {attributeFilter: ["class"]});
         });

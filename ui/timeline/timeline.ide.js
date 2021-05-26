@@ -79,6 +79,13 @@ TW.IDE.Widgets.timeline = function () {
           'defaultValue': 3,
           'description': 'Define how many items are visible in the viewport'
         },
+        'compact': {
+          'isVisible': true,
+          'baseType': 'BOOLEAN',
+          'isEditable': true,
+          'defaultValue': false,
+          'description': 'true to activate the compact mode'
+        },
         'debugMode': {
           'isVisible': true,
           'baseType': 'BOOLEAN',

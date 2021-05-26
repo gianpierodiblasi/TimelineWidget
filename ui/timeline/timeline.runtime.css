@@ -41,3 +41,23 @@
 .timeline__item--bottom:before {
   top: -1%;
 }
+
+.timeline-compact .timeline__content {
+  padding: 0px;
+  border: none;
+  text-align: center;
+}
+.timeline-compact .timeline__content:before, .timeline-compact .timeline__content:after {
+  border: none !important;
+}
+
+.timeline-compact .timeline__item--top {
+  padding-bottom: 10px !important;
+}
+
+.timeline-compact .timeline__item--bottom {
+  padding-top: 20px !important;
+}
+.timeline-compact .timeline__item--bottom:before {
+  top: -2%;
+}
