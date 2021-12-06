@@ -7,7 +7,7 @@
         <FieldDefinition aspect.isPrimaryKey="false" baseType="BOOLEAN" description="" name="selectable" ordinal="3"/>
         <FieldDefinition aspect.isPrimaryKey="false" baseType="STRING" description="" name="backgroundColor" ordinal="4"/>
         <FieldDefinition aspect.isPrimaryKey="false" baseType="STRING" description="" name="borderColor" ordinal="5"/>
-        <FieldDefinition aspect.isPrimaryKey="false" baseType="STRING" description="" name="timelineColorFromlHere" ordinal="6"/>
+        <FieldDefinition aspect.isPrimaryKey="false" baseType="STRING" description="" name="timelineColorFromHere" ordinal="6"/>
       </FieldDefinitions>      
     </DataShape>
   </DataShapes>

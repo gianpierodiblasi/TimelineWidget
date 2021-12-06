@@ -64,7 +64,7 @@ TW.Runtime.Widgets.timeline = function () {
       var selectableKey = timeline.isCompressed ? timeline.dataShape.fieldDefinitions.selectable.alias : "selectable";
       var backgroundColorKey = timeline.isCompressed ? timeline.dataShape.fieldDefinitions.backgroundColor.alias : "backgroundColor";
       var borderColorKey = timeline.isCompressed ? timeline.dataShape.fieldDefinitions.borderColor.alias : "borderColor";
-      var timelineColorFromlHereKey = timeline.isCompressed ? timeline.dataShape.fieldDefinitions.timelineColorUntilHere.alias : "timelineColorFromlHere";
+      var timelineColorFromHereKey = timeline.isCompressed ? timeline.dataShape.fieldDefinitions.timelineColorUntilHere.alias : "timelineColorFromHere";
 
       var style = "";
       for (var index = 0; index < timeline.rows.length; index++) {
@@ -91,8 +91,8 @@ TW.Runtime.Widgets.timeline = function () {
         if (timeline.rows[index][borderColorKey]) {
           style += '.widget-timeline-' + uid + ' .timeline__item_' + index + ':after {border-color: ' + timeline.rows[index][borderColorKey] + ' !important}';
         }
-        if (timeline.rows[index][timelineColorFromlHereKey]) {
-          style += '.widget-timeline-' + uid + ' .timeline__item_' + index + ':before {background: ' + timeline.rows[index][timelineColorFromlHereKey] + '}';
+        if (timeline.rows[index][timelineColorFromHereKey]) {
+          style += '.widget-timeline-' + uid + ' .timeline__item_' + index + ':before {background: ' + timeline.rows[index][timelineColorFromHereKey] + '}';
         }
       }
 
