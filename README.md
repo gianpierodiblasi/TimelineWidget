@@ -1,6 +1,8 @@
 # TimelineWidget
 An extension to visualize a timeline.
 
+**This Extension is provided as-is and without warranty or support. It is not part of the PTC product suite and there is no PTC support.**
+
 ## Description
 This extension provides a widget to visualize a timeline based on the squarechip timeline (see dependencies). The timeline is described by the ds_Timeline DataShape (see below); the DataShape structure is mandatory, but it can be extended with additional fields.
 
